@@ -5,6 +5,14 @@ public class Kafe20{
         System.out.print("Masukkan kode promo! : ");
         String diskon = sc.nextLine();
         menu("Andi",true, diskon);
+
+        System.out.print("Masukkan nomor menu yang anda inginkan : ");
+        int menu = sc.nextInt();
+        System.out.print("Masukkan jumlah yang ingin anda pesan : ");
+        int jumlah = sc.nextInt();
+
+        int totalHarga = hitungTotalHarga(menu, jumlah);
+        System.out.println("Total harga yang harus dibayar adlaah : "+totalHarga);
     }
     public static void menu(String namaPelanggan, boolean isMember, String kodePromo){
         System.out.println("Selaamt Datang, "+namaPelanggan+" !");
@@ -29,8 +37,13 @@ public class Kafe20{
         System.out.println("4. Teh Tarik  - RP 25.000");
         System.out.println("5. Roti Bakar - RP 65.000");
         System.out.println("6. Mie Goreng - RP 13.000");
-        System.out.println("7. Kopi Hitam - RP 16.000");
         System.out.println("===========================");
         System.out.println("Silahkan Pilih Menu!!!!...");
     }   
+    public static int hitungTotalHarga(int pilihanMenu, int banyakItem){
+        int[] hargaItem = {15000, 13000, 72000 , 25000, 65000, 13000};
+
+        int hargaTotal =   hargaItem[pilihanMenu-1] * banyakItem;
+        return hargaTotal;
+    }
 }

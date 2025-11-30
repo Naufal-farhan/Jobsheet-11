@@ -2,8 +2,8 @@ public class PengunjungKafe20 {
     
     static void daftarPengunjung(String...namaPengunjung){
         System.out.println("Daftar nama Pengunjung : ");
-        for(int i = 0; i< namaPengunjung.length ; i++){
-            System.out.println("- "+namaPengunjung[i]);
+        for(String i : namaPengunjung){
+            System.out.println("- "+i);
         }
     }
     public static void main(String[] args) {
